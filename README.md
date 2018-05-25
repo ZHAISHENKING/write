@@ -12,7 +12,7 @@
 - 模板过滤器
 
 ### 食用方法
-git上拉下来 由于涉及个人信息,我删除来一个base_settings.py文件
+git上拉下来 由于涉及个人信息,我删除了一个base_settings.py文件
 ```
 # -*- coding: utf-8 -*-
 # 配置数据库
@@ -27,16 +27,7 @@ DATABASES = {
         'OPTIONS': {'charset': 'utf8mb4', }
     }
 }
- #邮箱配置
-EMAIL_HOST = 'smtp.163.com'
-EMAIL_HOST_USER = 'your_email'
-EMAIL_HOST_PASSWORD = 'your_email_password'  # 这个不是邮箱密码，而是授权码
-EMAIL_PORT = 465  # 由于阿里云的25端口打不开，所以必须使用SSL然后改用465端口
-# 是否使用了SSL 或者TLS，为了用465端口，要使用这个
-EMAIL_USE_SSL = True
-# 默认发件人，不设置的话django默认使用的webmaster@localhost，所以要设置成自己可
 
-DEFAULT_FROM_EMAIL = 'houseGod <xxxxx@163.com>'
 
 # 网站默认设置和上下文信息
 SITE_END_TITLE = 'HouseGod'
@@ -47,7 +38,7 @@ SITE_KEYWORDS = 'python'
 ```
 pip install -r reqirements.txt
 ```
-再之后就上迁移数据库
+再之后就是迁移数据库
 ```
 python manage.py makemigrations
 python manage.py migrate
