@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block main %}
+       <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+
+
+  <div id="posts" class="posts-expand">
+  <header class="post-header">
+
+	<h2 class="post-title" itemprop="name headline">标签</h2>
+
+
+
+</header>
+
+
+
+      <div class="tag-cloud">
+        <div class="tag-cloud-title">
+            目前共计 {{ tag.count }} 个标签
+        </div>
+        <div class="tag-cloud-tags">
+            {% for i in tag %}
+             <a href="/tags/{{ i.id }}/" style="font-size: 30px; color: #111">{{ i.name }}</a>
+            {% endfor %}
+        </div>
+      </div>
+
+  </div>
+
+
+          </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+  {% include 'layout/info.html' %}
+
+
+
+      </div>
+    </main>
+
+{% endblock %}

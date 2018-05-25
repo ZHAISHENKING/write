@@ -12,14 +12,12 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import sys
-# 更换默认的数据库连接
 import pymysql
 pymysql.install_as_MySQLdb()
 # 导入网站个人信息，非通用信息
 from .base_settings import *
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 # 添加 apps 目录
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
@@ -31,8 +29,7 @@ SECRET_KEY = '(*!odditp6*9t68y)=w&6ih_+_6nmrld+a@bvpkwfb$yepujhd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*', ]
-
+ALLOWED_HOSTS = ['*',]
 # 自定义用户model
 AUTH_USER_MODEL = 'User.Ouser'
 
@@ -124,10 +121,10 @@ USE_TZ = False  # 关闭国际时间，不然数据库报错
 
 # 静态文件收集
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),  # 静态文件路径设置
-)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, 'static'),  # 静态文件路径设置
+#)
 
 
 # full text search

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load blog_tags %}
+{% load highlight %}
+
+{% block metas %}
+<meta name="description" content="文章搜索：{{ query }}，网站全文搜索功能，按照文章标题和内容建立索引，实现整站搜索，django-haystack全文搜索库的使用">
+<meta name="keywords" content="{{ query }},全文搜索,django-haystack">
+{% endblock %}
+
+{% block main %}
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+              <div id="posts" class="posts-expand">
+
+                <ul class="search-result-list">
+                    <header class="post-header">
+                     <h2 class="post-title" itemprop="name headline">搜索到的结果有{{ search_list.count }}篇</h2>
+                    </header>
+                  {% if search_list %}
+                      {% for article in search_list %}
+                      <li>
+                          <a href="/article/{{ article.object.slug }}" class="search-result-title">{{ article.object.title }}</a>
+                          <p class="search-result">
+                              {% with article.object.content_to_markdown|safe as this_body %}
+                                    <p class="d-none d-sm-block mb-2 f-15">{% highlight this_body with query max_length 130 %}</p>
+                                    <p class="d-block d-sm-none mb-2 f-15">{% highlight this_body with query max_length 64 %}</p>
+                              {% endwith %}
+                          </p>
+                      </li>
+                      {% endfor %}
+                    {% else %}
+
+                      <p>主人正在拼命创作中(#^.^#)…</p>
+                      <div id="local-search-result">
+                          <div>
+
+                              <i class="fa fa-frown-o fa-5x"></i>
+                          </div>
+                      </div>
+                    {% endif %}
+
+                </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+    {% include 'layout/info.html' %}
+    </main>
+
+{% endblock %}
