@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main %}
+  <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+
+
+              <section id="posts" class="posts-expand">
+                  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                    <link itemprop="mainEntityOfPage" href="http://blog.didiaoyuan.com/2017/12/09/自我反思-17-12-9/">
+                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                      <meta itemprop="name" content="didiaoyuan">
+                      <meta itemprop="description" content="">
+                      <meta itemprop="image" content="/images/zs.png">
+                    </span>
+                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                      <meta itemprop="name" content="宅神的博客">
+                    </span>
+                      <header class="post-header">
+                          <h2 class="post-title" itemprop="name headline">
+                                <a class="post-title-link" href="/2017/12/09/自我反思-17-12-9/" itemprop="url">{{ article.title }}</a>
+                          </h2>
+                        <div class="post-meta">
+                          <span class="post-time">
+                              <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                              </span>
+                                <span class="post-meta-item-text">发表于</span>
+                              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-09T19:11:15+08:00">
+                                {{ article.create_date }}
+                              </time>
+                          </span>
+                          <span class="post-category" >
+                              <span class="post-meta-divider">|</span>
+                              <span class="post-meta-item-icon">
+                                <i class="fa fa-folder-o"></i>
+                              </span>
+                              <span class="post-meta-item-text">分类于</span>
+                              <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                                <a href="/categories/随笔/" itemprop="url" rel="index">
+                                  <span itemprop="name">{{ article.category }}</span>
+                                </a>
+                              </span>
+                          </span>
+
+                          <span id="/2017/12/09/自我反思-17-12-9/" class="leancloud_visitors" data-flag-title="自我反思-17-12-9">
+                           <span class="post-meta-divider">|</span>
+                           <span class="post-meta-item-icon">
+                             <i class="fa fa-eye"></i>
+                           </span>
+
+                             <span class="post-meta-item-text">阅读次数 </span>
+
+                             <span class="leancloud-visitors-count">{{ article.views }}</span>
+                          </span>
+                        </div>
+                      </header>
+
+                    <div class="post-body" itemprop="articleBody">
+                        {{ article.content|safe}}
+
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <footer class="post-footer">
+                        <div class="post-eof"></div>
+                    </footer>
+                  </article>
+              </section>
+          </div>
+        </div>
+        </div>
+      <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
+
+
+
+
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview">
+                站点概览
+              </li>
+            </ul>
+                            <section class="site-overview sidebar-panel">
+                <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <img class="site-author-image" itemprop="image"
+                       src="/static/images/zs.png"
+                       alt="housegod" />
+                  <p class="site-author-name" itemprop="name">宅神</p>
+
+                  <p class="site-description motion-element" itemprop="description"></p>
+
+                </div>
+                  <!--日志分类-->
+                  <nav class="site-state motion-element">
+                    <div class="site-state-item site-state-posts">
+                      <a href="/archives">
+                        <span class="site-state-item-count">68</span>
+                        <span class="site-state-item-name">日志</span>
+                      </a>
+                    </div>
+
+                    <div class="site-state-item site-state-categories">
+                      <a href="/categories">
+                        <span class="site-state-item-count">15</span>
+                        <span class="site-state-item-name">分类</span>
+                      </a>
+                    </div>
+
+                    <div class="site-state-item site-state-tags">
+                      <a href="/tags">
+                        <span class="site-state-item-count">24</span>
+                        <span class="site-state-item-name">标签</span>
+                      </a>
+                    </div>
+
+                </nav>
+
+                  <!--RSS订阅-->
+                  <div class="feed-link motion-element">
+                    <a href="/static/atom.xml" rel="alternate">
+                      <i class="fa fa-rss"></i>
+                      RSS
+                    </a>
+                  </div>
+
+                  <!--git 微博-->
+                  <div class="links-of-author motion-element">
+
+
+                      <span class="links-of-author-item">
+                        <a href="https://github.com/LowApe" target="_blank" title="GitHub">
+
+                            <i class="fa fa-fw fa-github"></i>
+
+                          GitHub
+                        </a>
+                      </span>
+
+                      <span class="links-of-author-item">
+                        <a href="http://weibo.com/5904420225/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="Weibo">
+
+                            <i class="fa fa-fw fa-weibo"></i>
+
+                          Weibo
+                        </a>
+                      </span>
+
+
+                </div>
+
+
+
+                  <div class="cc-license motion-element" itemprop="license">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                      <img src="/static/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+                    </a>
+                  </div>
+              </section>
+
+
+          <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc" style="max-height: 188px; width: calc(100% + 0px);">
+
+
+
+
+
+
+              <div class="post-toc-content">
+                  <ol class="nav">
+                      <li>{{ article.toc | safe }}</li>
+                 </ol>
+              </div>
+
+            <div id="myTime">
+                <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="160" height="70" id="honehoneclock" align="middle">
+                    <param name="allowScriptAccess" value="always">
+                    <param name="movie" value="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.swf">
+                    <param name="quality" value="high">
+                    <param name="bgcolor" value="#ffffff">
+                    <param name="wmode" value="transparent">
+                    <embed wmode="transparent" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.swf" quality="high" bgcolor="#ffffff" width="160" height="70" name="honehoneclock" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+                </object>
+            </div>
+          </div>
+        </section>
+          </div>
+      </aside>
+
+
+  </main>
+{% endblock %}

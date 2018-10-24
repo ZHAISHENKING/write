@@ -1,0 +1,83 @@
+{% load blog_tags %}
+<aside id="sidebar" class="sidebar">
+            <div class="sidebar-inner">
+                <!--博主信息-->
+              <section class="site-overview sidebar-panel sidebar-panel-active">
+                <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <img class="site-author-image" itemprop="image"
+                       src="/static/images/zs.png"
+                       alt="housegod" />
+                  <p class="site-author-name" itemprop="name">宅神</p>
+
+                  <p class="site-description motion-element" itemprop="description"></p>
+
+                </div>
+                  <!--日志分类-->
+                  <nav class="site-state motion-element">
+                      {% get_artcile_count as article %}
+                    <div class="site-state-item site-state-posts">
+                      <a href="/archives/">
+                        <span class="site-state-item-count">{{ article }}</span>
+                        <span class="site-state-item-name">日志</span>
+                      </a>
+                    </div>
+                    {% get_cate_count as cate %}
+                    <div class="site-state-item site-state-categories">
+                      <a href="/categories/">
+                        <span class="site-state-item-count">{{ cate }}</span>
+                        <span class="site-state-item-name">分类</span>
+                      </a>
+                    </div>
+                  {% get_tag_count as tags %}
+                    <div class="site-state-item site-state-tags">
+                      <a href="/tags/">
+                        <span class="site-state-item-count">{{ tags }}</span>
+                        <span class="site-state-item-name">标签</span>
+                      </a>
+                    </div>
+
+                </nav>
+
+                  <!--RSS订阅-->
+                  <div class="feed-link motion-element">
+                    <a href="/static/atom.xml" rel="alternate">
+                      <i class="fa fa-rss"></i>
+                      RSS
+                    </a>
+                  </div>
+
+                  <!--git 微博-->
+                  <div class="links-of-author motion-element">
+
+
+                      <span class="links-of-author-item">
+                        <a href="https://github.com/LowApe" target="_blank" title="GitHub">
+
+                            <i class="fa fa-fw fa-github"></i>
+
+                          GitHub
+                        </a>
+                      </span>
+
+                      <span class="links-of-author-item">
+                        <a href="https://weibo.com/u/2944653095?refer_flag=1001030101_" target="_blank" title="Weibo">
+
+                            <i class="fa fa-fw fa-weibo"></i>
+
+                          Weibo
+                        </a>
+                      </span>
+
+
+                </div>
+
+
+
+                  <div class="cc-license motion-element" itemprop="license">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                      <img src="/static/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+                    </a>
+                  </div>
+              </section>
+            </div>
+          </aside>
